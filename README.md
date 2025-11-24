@@ -1,2 +1,56 @@
-# olms
-A digital platform that streamlines library operations, enabling efficient book management, user services, and automated issue-return processes
+*### Online Library Management System*
+
+📘 Overview
+
+The Online Library Management System is a Java-based desktop application built using NetBeans and MySQL.
+It helps manage books, users, staff, and library operations such as issuing and returning books through an easy-to-use GUI.
+
+✨ Features
+
+Login System (Admin/Staff)
+Dashboard Panel
+Add Books
+View Available Books
+Issue Books
+Return Books
+Add/Remove Staff
+Logout 
+MySQL Database Connectivity (JDBC)
+
+🛠 Technologies Used
+
+Java (NetBeans IDE)
+Java Swing (GUI)
+MySQL Database
+JDBC for database connectivity
+
+📂 Modules
+
+1. Login Module
+2. dashboard
+3. Book Management
+4. Issue/Return Module
+5. Staff Management
+
+🗄 Database Setup
+
+1. Import the provided database.sql file into MySQL
+2. Open NetBeans → Set up JDBC connection
+3. Update the following in your Java code (if required):
+              DB URL
+              Username
+              Password
+
+▶ How to Run the Project
+
+1. Install NetBeans and MySQL
+2. Clone or download the project
+3. Open it in NetBeans
+4. Import the SQL file
+5. Run the project — the Login Page loads first
+
+![Image](https://github.com/user-attachments/assets/e80ca8b8-f339-4242-b902-c451c28a1dd9)
+
+![Image](https://github.com/user-attachments/assets/8e71c90e-a128-411e-8286-3d488418cebb)
+
+![Image](https://github.com/user-attachments/assets/7ebf559c-32f6-4995-aaa1-74e6cbbe54fc)
