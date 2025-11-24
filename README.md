@@ -58,3 +58,10 @@ JDBC for database connectivity
 <img width="673" height="400" alt="image" src="https://github.com/user-attachments/assets/f9df7beb-43c9-4cdf-997c-8c56c4a70f1f" />
 
 <img width="673" height="400" alt="image" src="https://github.com/user-attachments/assets/e74821a3-ccdc-4c05-9be9-04543d6c6482" />
+
+<img width="700" height="402" alt="image" src="https://github.com/user-attachments/assets/b86044c2-7908-43b7-acfc-9cbddbf46eb7" />
+
+<img width="740" height="465" alt="image" src="https://github.com/user-attachments/assets/4ad1a411-d3db-4817-be5d-998a290e5192" />
+
+<img width="740" height="676" alt="image" src="https://github.com/user-attachments/assets/8f8fd8d6-c601-4d23-b247-2d0ce394f92b" />
+
