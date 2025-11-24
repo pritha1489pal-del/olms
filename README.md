@@ -55,6 +55,6 @@ JDBC for database connectivity
 
 ![Image](https://github.com/user-attachments/assets/7ebf559c-32f6-4995-aaa1-74e6cbbe54fc)
 
-<img width="773" height="465" alt="image" src="https://github.com/user-attachments/assets/f9df7beb-43c9-4cdf-997c-8c56c4a70f1f" />
+<img width="673" height="400" alt="image" src="https://github.com/user-attachments/assets/f9df7beb-43c9-4cdf-997c-8c56c4a70f1f" />
 
 <img width="773" height="470" alt="image" src="https://github.com/user-attachments/assets/e74821a3-ccdc-4c05-9be9-04543d6c6482" />
