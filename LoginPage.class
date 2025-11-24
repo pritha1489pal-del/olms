@@ -1,0 +1,133 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.GroupLayout.Alignment;
+
+public class LoginPage extends JFrame {
+    private JButton jButton1;
+    private JLabel jLabel1;
+    private JLabel jLabel2;
+    private JLabel jLabel3;
+    private JPasswordField password;
+    private JTextField user;
+
+    public LoginPage() {
+        this.initComponents();
+    }
+
+    private void initComponents() {
+        this.jLabel1 = new JLabel();
+        this.jLabel2 = new JLabel();
+        this.jLabel3 = new JLabel();
+        this.user = new JTextField();
+        this.password = new JPasswordField();
+        this.jButton1 = new JButton();
+        this.setDefaultCloseOperation(3);
+        this.setResizable(false);
+        this.jLabel1.setFont(new Font("Segoe UI", 1, 24));
+        this.jLabel1.setHorizontalAlignment(0);
+        this.jLabel1.setText("LOGIN");
+        this.jLabel2.setFont(new Font("Segoe UI", 1, 14));
+        this.jLabel2.setHorizontalAlignment(4);
+        this.jLabel2.setText("PASSWORD");
+        this.jLabel3.setFont(new Font("Segoe UI", 1, 14));
+        this.jLabel3.setHorizontalAlignment(4);
+        this.jLabel3.setText("USERNAME");
+        this.user.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                LoginPage.this.userActionPerformed(evt);
+            }
+        });
+        this.jButton1.setFont(new Font("Segoe UI", 1, 14));
+        this.jButton1.setText("LOGIN");
+        this.jButton1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                LoginPage.this.jButton1ActionPerformed(evt);
+            }
+        });
+        GroupLayout layout = new GroupLayout(this.getContentPane());
+        this.getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING, layout.createSequentialGroup().addGap(0, 0, 32767).addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(this.jLabel3, -2, 93, -2).addComponent(this.jLabel2, -2, 93, -2)).addGap(83, 83, 83).addGroup(layout.createParallelGroup(Alignment.LEADING, false).addComponent(this.user, -1, 213, 32767).addComponent(this.password)).addGap(63, 63, 63)).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(173, 173, 173).addComponent(this.jLabel1, -2, 213, -2)).addGroup(layout.createSequentialGroup().addGap(199, 199, 199).addComponent(this.jButton1, -2, 165, -2))).addContainerGap(199, 32767)));
+        layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(14, 14, 14).addComponent(this.jLabel1, -2, 36, -2).addGap(59, 59, 59).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.user, -2, 43, -2).addComponent(this.jLabel3, -2, 43, -2)).addGap(54, 54, 54).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel2, -2, 38, -2).addComponent(this.password, -2, 38, -2)).addGap(45, 45, 45).addComponent(this.jButton1, -2, 43, -2).addContainerGap(51, 32767)));
+        this.pack();
+    }
+
+    private void userActionPerformed(ActionEvent evt) {
+    }
+
+    private void jButton1ActionPerformed(ActionEvent evt) {
+        String url = "jdbc:mysql://localhost:3306/library?useSSL=false";
+        String mysqluser = "root";
+        String mysqlpwd = "mysql8087";
+        String pswrd = new String(this.password.getPassword());
+        String username = this.user.getText();
+        String query = "select PASSWORD from admin where USER_ID ='" + username + "';";
+
+        try {
+            Connection conn = DriverManager.getConnection(url, mysqluser, mysqlpwd);
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(query);
+            if (rs.next()) {
+                String realpswrd = rs.getString("PASSWORD");
+                if (realpswrd.equals(pswrd)) {
+                    Dashboard dsh = new Dashboard();
+                    dsh.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "username or password entered is wrong");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Wrong Username");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+
+    }
+
+    public static void main(String[] args) {
+        try {
+            for(UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(LoginPage.class.getName()).log(Level.SEVERE, (String)null, ex);
+        }
+
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                (new LoginPage()).setVisible(true);
+            }
+        });
+    }
+}
