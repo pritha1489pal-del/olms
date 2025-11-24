@@ -1,0 +1,204 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.GroupLayout.Alignment;
+
+public class Add_Books extends JFrame {
+    private JButton b1;
+    private JButton b2;
+    private JLabel jLabel1;
+    private JLabel jLabel2;
+    private JLabel jLabel3;
+    private JLabel jLabel4;
+    private JLabel jLabel5;
+    private JTextField t1;
+    private JTextField t2;
+    private JTextField t3;
+    private JTextField t4;
+    private JTextField t5;
+
+    public Add_Books() {
+        this.initComponents();
+        this.setDefaultCloseOperation(2);
+    }
+
+    private void initComponents() {
+        this.jLabel1 = new JLabel();
+        this.jLabel2 = new JLabel();
+        this.jLabel3 = new JLabel();
+        this.jLabel4 = new JLabel();
+        this.jLabel5 = new JLabel();
+        this.t1 = new JTextField();
+        this.t2 = new JTextField();
+        this.t3 = new JTextField();
+        this.t4 = new JTextField();
+        this.t5 = new JTextField();
+        this.b1 = new JButton();
+        this.b2 = new JButton();
+        this.setDefaultCloseOperation(3);
+        this.setResizable(false);
+        this.jLabel1.setFont(new Font("Segoe UI", 1, 14));
+        this.jLabel1.setHorizontalAlignment(0);
+        this.jLabel1.setText("BOOK ID");
+        this.jLabel2.setFont(new Font("Segoe UI", 1, 14));
+        this.jLabel2.setHorizontalAlignment(0);
+        this.jLabel2.setText("CATEGORY");
+        this.jLabel3.setFont(new Font("Segoe UI", 1, 14));
+        this.jLabel3.setHorizontalAlignment(0);
+        this.jLabel3.setText("NAME");
+        this.jLabel4.setFont(new Font("Segoe UI", 1, 14));
+        this.jLabel4.setHorizontalAlignment(0);
+        this.jLabel4.setText("AUTHOR");
+        this.jLabel5.setFont(new Font("Segoe UI", 1, 14));
+        this.jLabel5.setHorizontalAlignment(0);
+        this.jLabel5.setText("COPIES");
+        this.t1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Add_Books.this.t1ActionPerformed(evt);
+            }
+        });
+        this.t2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Add_Books.this.t2ActionPerformed(evt);
+            }
+        });
+        this.t3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Add_Books.this.t3ActionPerformed(evt);
+            }
+        });
+        this.t4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Add_Books.this.t4ActionPerformed(evt);
+            }
+        });
+        this.t5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Add_Books.this.t5ActionPerformed(evt);
+            }
+        });
+        this.b1.setFont(new Font("Segoe UI", 1, 14));
+        this.b1.setText("ADD");
+        this.b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Add_Books.this.b1ActionPerformed(evt);
+            }
+        });
+        this.b2.setFont(new Font("Segoe UI", 1, 14));
+        this.b2.setText("CANCEL");
+        this.b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Add_Books.this.b2ActionPerformed(evt);
+            }
+        });
+        GroupLayout layout = new GroupLayout(this.getContentPane());
+        this.getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(43, 43, 43).addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(this.jLabel1, -2, 140, -2).addComponent(this.jLabel2, -2, 140, -2).addComponent(this.jLabel3, -2, 140, -2).addComponent(this.jLabel4, -2, 140, -2).addComponent(this.jLabel5, -2, 140, -2)).addGap(51, 51, 51).addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(this.t5, -2, 280, -2).addComponent(this.t4, -2, 280, -2).addComponent(this.t3, -2, 280, -2).addComponent(this.t2, -2, 280, -2).addComponent(this.t1, -2, 280, -2))).addGroup(layout.createSequentialGroup().addGap(102, 102, 102).addComponent(this.b1, -2, 122, -2).addGap(111, 111, 111).addComponent(this.b2, -2, 122, -2))).addContainerGap(56, 32767)));
+        layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(66, 66, 66).addGroup(layout.createParallelGroup(Alignment.LEADING, false).addComponent(this.t1, -1, 40, 32767).addComponent(this.jLabel1, -1, -1, 32767)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel2, -2, 40, -2).addComponent(this.t2, -1, 40, 32767)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel3, -2, 40, -2).addComponent(this.t3, -1, 40, 32767)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel4, -2, 40, -2).addComponent(this.t4, -1, 40, 32767)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.jLabel5, -2, 40, -2).addComponent(this.t5, -1, 40, 32767)).addGap(39, 39, 39).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.b1, -2, 49, -2).addComponent(this.b2, -2, 49, -2)).addContainerGap(18, 32767)));
+        this.pack();
+    }
+
+    private void t1ActionPerformed(ActionEvent evt) {
+    }
+
+    private void t2ActionPerformed(ActionEvent evt) {
+    }
+
+    private void t3ActionPerformed(ActionEvent evt) {
+    }
+
+    private void t4ActionPerformed(ActionEvent evt) {
+    }
+
+    private void t5ActionPerformed(ActionEvent evt) {
+    }
+
+    private void b2ActionPerformed(ActionEvent evt) {
+        this.dispose();
+    }
+
+    private void b1ActionPerformed(ActionEvent evt) {
+        String url = "jdbc:mysql://localhost/library";
+        String user = "root";
+        String pwd = "mysql8087";
+        String query = "insert into books values(?,?,?,?,?);";
+        String id = this.t1.getText();
+        String category = this.t2.getText();
+        String name = this.t3.getText();
+        String author = this.t4.getText();
+        int copies = Integer.parseInt(this.t5.getText());
+        String checkquery = "update books set copies=copies+" + copies + " where name='" + name + "' and category='" + category + "' and author='" + author + "';";
+
+        try {
+            Connection conn = DriverManager.getConnection(url, user, pwd);
+            Statement stmnt = conn.createStatement();
+            int rows = stmnt.executeUpdate(checkquery);
+            if (rows > 0) {
+                JOptionPane.showMessageDialog(this, "One record added successfully");
+            } else {
+                PreparedStatement stm = conn.prepareCall(query);
+                stm.setString(1, id);
+                stm.setString(2, category);
+                stm.setString(3, name);
+                stm.setString(4, author);
+                stm.setInt(5, copies);
+                stm.execute();
+                JOptionPane.showMessageDialog(this, "One record added successfully");
+            }
+
+            this.t1.setText((String)null);
+            this.t2.setText((String)null);
+            this.t3.setText((String)null);
+            this.t4.setText((String)null);
+            this.t5.setText((String)null);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        try {
+            for(UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Add_Books.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Add_Books.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Add_Books.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Add_Books.class.getName()).log(Level.SEVERE, (String)null, ex);
+        }
+
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                (new Add_Books()).setVisible(true);
+            }
+        });
+    }
+}
