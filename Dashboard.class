@@ -1,0 +1,163 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class Dashboard extends JFrame {
+    private JButton b1;
+    private JButton b2;
+    private JButton b3;
+    private JButton b4;
+    private JButton b5;
+    private JButton b6;
+    private JButton b7;
+    private JLabel jLabel1;
+    private JProgressBar jProgressBar1;
+
+    public Dashboard() {
+        this.initComponents();
+    }
+
+    private void initComponents() {
+        this.jProgressBar1 = new JProgressBar();
+        this.jLabel1 = new JLabel();
+        this.b1 = new JButton();
+        this.b2 = new JButton();
+        this.b3 = new JButton();
+        this.b4 = new JButton();
+        this.b5 = new JButton();
+        this.b6 = new JButton();
+        this.b7 = new JButton();
+        this.setDefaultCloseOperation(3);
+        this.setPreferredSize(new Dimension(585, 385));
+        this.setResizable(false);
+        this.jLabel1.setFont(new Font("Segoe UI", 1, 18));
+        this.jLabel1.setHorizontalAlignment(0);
+        this.jLabel1.setText("DASHBOARD");
+        this.b1.setText("BOOKS AVAILABLE");
+        this.b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Dashboard.this.b1ActionPerformed(evt);
+            }
+        });
+        this.b2.setText("ADD BOOKS");
+        this.b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Dashboard.this.b2ActionPerformed(evt);
+            }
+        });
+        this.b3.setText("REMOVE BOOKS");
+        this.b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Dashboard.this.b3ActionPerformed(evt);
+            }
+        });
+        this.b4.setText("STAFF DETAILS");
+        this.b4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Dashboard.this.b4ActionPerformed(evt);
+            }
+        });
+        this.b5.setText("ADD STAFF");
+        this.b5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Dashboard.this.b5ActionPerformed(evt);
+            }
+        });
+        this.b6.setText("REMOVE STAFF");
+        this.b6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Dashboard.this.b6ActionPerformed(evt);
+            }
+        });
+        this.b7.setText("EDIT ADMIN");
+        this.b7.setPreferredSize(new Dimension(113, 23));
+        this.b7.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                Dashboard.this.b7ActionPerformed(evt);
+            }
+        });
+        GroupLayout layout = new GroupLayout(this.getContentPane());
+        this.getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(this.jLabel1, -1, -1, 32767).addGroup(Alignment.TRAILING, layout.createSequentialGroup().addGap(49, 49, 49).addGroup(layout.createParallelGroup(Alignment.TRAILING).addComponent(this.b1, -1, 169, 32767).addComponent(this.b2, Alignment.LEADING, -1, -1, 32767).addComponent(this.b3, Alignment.LEADING, -1, -1, 32767)).addGap(105, 105, 105).addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(this.b5, Alignment.TRAILING, -2, 169, -2).addGroup(Alignment.TRAILING, layout.createParallelGroup(Alignment.LEADING, false).addComponent(this.b4, Alignment.TRAILING, -1, -1, 32767).addComponent(this.b6, Alignment.TRAILING, -1, 169, 32767))).addGap(58, 58, 58)).addGroup(layout.createSequentialGroup().addGap(191, 191, 191).addComponent(this.b7, -2, 169, -2).addContainerGap(-1, 32767)));
+        layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup().addGap(16, 16, 16).addComponent(this.jLabel1, -2, 30, -2).addPreferredGap(ComponentPlacement.RELATED, 60, 32767).addGroup(layout.createParallelGroup(Alignment.LEADING, false).addComponent(this.b1, -1, 42, 32767).addComponent(this.b4, -1, -1, 32767)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(Alignment.BASELINE).addComponent(this.b2, -2, 42, -2).addComponent(this.b5, -2, 42, -2)).addGap(18, 18, 18).addGroup(layout.createParallelGroup(Alignment.LEADING).addComponent(this.b6, -2, 40, -2).addComponent(this.b3, -2, 42, -2)).addGap(33, 33, 33).addComponent(this.b7, -2, 41, -2).addGap(53, 53, 53)));
+        this.pack();
+    }
+
+    private void b1ActionPerformed(ActionEvent evt) {
+        Books_Available books = new Books_Available();
+        books.setVisible(true);
+    }
+
+    private void b2ActionPerformed(ActionEvent evt) {
+        Add_Books add = new Add_Books();
+        add.setVisible(true);
+    }
+
+    private void b3ActionPerformed(ActionEvent evt) {
+        Remove_Books remove = new Remove_Books();
+        remove.setVisible(true);
+    }
+
+    private void b7ActionPerformed(ActionEvent evt) {
+        Edit_Admin edit = new Edit_Admin();
+        edit.setVisible(true);
+    }
+
+    private void b4ActionPerformed(ActionEvent evt) {
+        Staff_Details staff = new Staff_Details();
+        staff.setVisible(true);
+    }
+
+    private void b5ActionPerformed(ActionEvent evt) {
+        Add_Staff staff = new Add_Staff();
+        staff.setVisible(true);
+    }
+
+    private void b6ActionPerformed(ActionEvent evt) {
+        Remove_Staff staff = new Remove_Staff();
+        staff.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        try {
+            for(UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, (String)null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, (String)null, ex);
+        }
+
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                (new Dashboard()).setVisible(true);
+            }
+        });
+    }
+}
